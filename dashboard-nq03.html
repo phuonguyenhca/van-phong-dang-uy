@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Theo dõi thực hiện Nghị quyết 03-NQ/ĐU</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
+--bg:#F4F5F7;--sf:#fff;--sf2:#F8F9FB;--ink:#17202B;--mut:#5E6978;--ln:#E1E4E9;--acc:#A81C26;--ok:#1F7A4D;--mid:#2F5D9E;--warn:#C25E00;--todo:#6B7280}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0F1419;--sf:#171E27;--sf2:#1C2530;--ink:#E8ECF1;--mut:#9AA5B4;--ln:#2B3644;--acc:#E5636B;--ok:#4CC38A;--mid:#7BA7E8;--warn:#F0A24A;--todo:#9AA5B4}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0F1419;--sf:#171E27;--sf2:#1C2530;--ink:#E8ECF1;--mut:#9AA5B4;--ln:#2B3644;--acc:#E5636B;--ok:#4CC38A;--mid:#7BA7E8;--warn:#F0A24A;--todo:#9AA5B4}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Be Vietnam Pro",system-ui,sans-serif}
+button,select,input{font:inherit;color:inherit}
+.app{display:flex;min-height:100vh}
+.side{width:230px;flex:none;background:var(--sf);border-right:1px solid var(--ln);padding:22px 14px;position:sticky;top:0;align-self:flex-start;height:100vh}
+.brand{padding:0 8px 18px}.brand b{display:block;font-size:20px;color:var(--acc)}.brand span{font-size:12.5px;color:var(--mut)}
+.side nav{display:flex;flex-direction:column;gap:2px}
+.side nav button{text-align:left;border:0;background:none;padding:10px 12px;border-radius:8px;cursor:pointer;color:var(--mut);font-size:14.5px}
+.side nav button:hover{background:var(--sf2)}
+.side nav button[aria-current=page]{background:var(--sf2);color:var(--ink);font-weight:700;box-shadow:inset 3px 0 0 var(--acc)}
+.body{flex:1;min-width:0}
+.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:22px 28px 6px}
+.top h1{font-size:21px;line-height:1.3;margin:0}.top p{margin:2px 0 0;font-size:13px;color:var(--mut)}
+.acts{display:flex;gap:6px;flex:none}
+.btn{border:1px solid var(--ln);background:var(--sf);border-radius:8px;padding:7px 12px;font-size:13px;cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:var(--mut)}
+main{padding:14px 28px 48px;max-width:1120px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.kpi{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:14px 16px;border-top:3px solid currentColor}
+.kpi .n{font-size:32px;font-weight:700;line-height:1.1;color:var(--ink)}.kpi .l{font-size:13px;color:var(--mut);margin-top:2px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:16px}
+h2{font-size:15px;margin:26px 0 10px}
+.dist{display:flex;height:12px;border-radius:6px;overflow:hidden;gap:2px}.dist i{display:block;background:currentColor}
+.lg{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:13px;color:var(--mut)}.lg b{display:inline-block;width:9px;height:9px;border-radius:50%;background:currentColor;margin-right:5px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.facts .card .n{font-size:22px;font-weight:700}.facts .card .l{font-size:13px;color:var(--mut)}
+.ok{color:var(--ok)}.mid{color:var(--mid)}.warn{color:var(--warn)}.todo{color:var(--todo)}
+.chip{display:inline-block;font-size:12px;font-weight:500;padding:2px 9px;border-radius:12px;color:currentColor;background:color-mix(in srgb,currentColor 12%,transparent);white-space:nowrap}
+.tool{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+.tool input,.tool select{padding:8px 10px;border:1px solid var(--ln);border-radius:8px;background:var(--sf)}
+.tool input{flex:1;min-width:180px}.cn{font-size:13px;color:var(--mut);margin-left:auto}
+.tw{background:var(--sf);border:1px solid var(--ln);border-radius:10px;overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:12.5px;font-weight:500;color:var(--mut);padding:10px 14px;border-bottom:1px solid var(--ln);background:var(--sf2)}
+td{padding:13px 14px;border-bottom:1px solid var(--ln);vertical-align:top;font-size:14px}tr:last-child td{border-bottom:0}
+td .s{font-size:12.5px;color:var(--mut)}td .nt{font-size:12.5px;color:var(--warn);margin-top:4px}
+.pg{height:6px;background:var(--ln);border-radius:3px;margin:8px 0 2px;overflow:hidden;max-width:220px}.pg i{display:block;height:100%;background:currentColor}
+.ms{display:flex;flex-wrap:wrap;gap:5px}.ms span{font-size:12.5px;background:var(--sf2);border:1px solid var(--ln);border-radius:6px;padding:2px 8px}
+.late{margin-left:4px;color:var(--warn)}
+.empty{padding:28px;text-align:center;color:var(--mut)}
+.todo-card{margin-bottom:10px;border-left:4px solid currentColor}.todo-card h3{font-size:14.5px;font-weight:500;margin:0 0 6px;color:var(--ink)}.todo-card .s{font-size:13px;color:var(--mut)}.todo-card .ac{margin-top:6px;font-size:13.5px;color:var(--ink)}
+.hide{display:none}
+@media(max-width:760px){
+.app{display:block}
+.side{position:fixed;left:0;right:0;bottom:0;top:auto;width:auto;height:auto;z-index:5;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));border-right:0;border-top:1px solid var(--ln)}
+.brand{display:none}.side nav{flex-direction:row}.side nav button{flex:1;text-align:center;padding:9px 2px;font-size:12.5px}
+.side nav button[aria-current=page]{box-shadow:inset 0 3px 0 var(--acc)}
+.top{padding:16px 16px 4px;flex-direction:column}.top h1{font-size:18px}
+main{padding:12px 16px 96px}
+thead{display:none}table,tbody,tr,td{display:block}tr{padding:12px 14px;border-bottom:1px solid var(--ln)}tr:last-child{border-bottom:0}
+td{padding:3px 0;border:0}td[data-l]::before{content:attr(data-l) ": ";color:var(--mut);font-size:12.5px}
+.cn{margin-left:0;width:100%}.tool select{flex:1}}
+@media print{.side,.acts,.tool{display:none}.app{display:block}.hide{display:block!important}}
+/*dang-theme*/
+:root{--acc:#A5161B;--gold:#D8A22B}
+body{background:#F3F3F1}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) body{background:#0F1419}}
+:root[data-theme="dark"] body{background:#0F1419}
+.bn{background:#A5161B;color:#fff;border-bottom:4px solid #E0B040}.bn .in{max-width:1120px;margin:auto;padding:12px 16px;display:flex;gap:12px;align-items:center}
+.bn .st{color:#F6D365;font-size:28px;line-height:1}.bn small{display:block;font-size:11.5px;letter-spacing:.09em;opacity:.93}.bn b{display:block;font-size:17px;letter-spacing:.05em;font-weight:700}
+h1{font-family:"Times New Roman",Times,"Be Vietnam Pro",serif!important;text-transform:uppercase;color:var(--acc)!important;font-size:19px!important;letter-spacing:.01em}
+.card,.kpi,.it,.tw,.note,.up,.row,.box,.rm{border-radius:3px!important}
+.btn,input,select,textarea,.chip,.tabs button,.side nav button{border-radius:3px!important}
+.card h2,.card>h2{font-family:"Times New Roman",Times,"Be Vietnam Pro",serif;font-size:16px!important;color:var(--acc);border-left:4px solid var(--gold);padding-left:9px;margin-bottom:6px!important}
+h2.gr{font-family:"Times New Roman",Times,"Be Vietnam Pro",serif;font-size:16px!important;border-bottom:2px solid var(--gold);padding-bottom:3px;text-transform:uppercase}
+.kpi{border-top:3px solid var(--acc)!important}.kpi.ok{border-top-color:var(--ok)!important}.kpi.mid{border-top-color:var(--mid)!important}.kpi.warn{border-top-color:var(--warn)!important}.kpi.todo{border-top-color:var(--todo)!important}
+.kpi .n{font-family:"Times New Roman",Times,"Be Vietnam Pro",serif;color:var(--acc)}
+.tabs{gap:0!important;border-bottom:2px solid var(--ln);margin:14px 0!important}
+.tabs button{border:0!important;background:none!important;color:var(--mut)!important;border-bottom:3px solid transparent!important;margin-bottom:-2px;padding:10px 16px!important}
+.tabs button[aria-selected=true]{color:var(--acc)!important;border-bottom-color:var(--acc)!important;font-weight:700}
+.btn.p{background:var(--acc);border-color:var(--acc)}
+.chip{font-weight:700!important;letter-spacing:.01em}
+.side{border-top:0}.side nav button[aria-current=page]{color:var(--acc)!important}
+</style></head><body><div class="bn"><div class="in"><span class="st">★</span><div><small>ĐẢNG BỘ THÀNH PHỐ HỒ CHÍ MINH</small><b>ĐẢNG ỦY PHƯỜNG TÂN THUẬN</b></div></div></div>
+<div class="app">
+<aside class="side"><div class="brand"><b>NQ 03-NQ/ĐU</b><span>Đảng ủy phường Tân Thuận</span></div>
+<nav id="nav"><button data-v="a">Tổng quan</button><button data-v="b">Chỉ tiêu 2026</button><button data-v="c">Lộ trình 2030</button><button data-v="d">Cần xử lý</button></nav></aside>
+<div class="body"><header class="top"><div><h1 id="ttl"></h1><p>Căn cứ: Nghị quyết 03-NQ/ĐU (01/10/2025), Kế hoạch 52-KH/ĐU (06/4/2026), Báo cáo 9 tháng đầu năm 2026.</p></div>
+<div class="acts"><button class="btn" id="th">Chế độ tối</button><button class="btn" id="pr">In, xuất PDF</button></div></header>
+<main id="v"></main></div></div>
+<script>
+const S={ok:"Có kết quả",mid:"Đang thực hiện",warn:"Dưới chỉ tiêu",todo:"Chưa có số liệu"};
+const NA="Báo cáo 9 tháng chưa nêu số liệu cho chỉ tiêu này. Cần cập nhật từ đơn vị chủ trì.";
+// [stt, nội dung, chủ trì, hạn(ISO), nhãn hạn, trạng thái, kết quả theo báo cáo, % hiện có, % chỉ tiêu, ghi chú]
+const T=[
+[1,"Hoàn thiện hạ tầng số, hạ tầng dữ liệu và an ninh mạng theo hướng dẫn của Văn phòng Thành ủy","Văn phòng Đảng ủy","2026-06-30","Quý II/2026","mid","Đã lắp đặt, cấu hình, kết nối hạ tầng mạng dùng chung và hệ thống bảo mật; một số hạng mục đang nghiệm thu, đồng bộ nền tảng chưa tối ưu.",0,0,""],
+[2,"100% cuộc họp của Thường trực, Ban Thường vụ, Ban Chấp hành, các Ban Chỉ đạo sử dụng Hệ thống thông tin phục vụ họp và xử lý công việc","Văn phòng Đảng ủy","2026-06-30","Quý II/2026, duy trì","ok","87 cuộc họp trên iCPV Cabinet; 100% thành phần được mời đã đăng nhập và tham gia. Tiếp tục mở rộng đến Mặt trận, đoàn thể, tổ chức đảng trực thuộc.",0,0,""],
+[3,"100% cán bộ, công chức xử lý văn bản trên môi trường mạng được trang bị chữ ký số","Văn phòng Đảng ủy","2026-06-30","Quý II/2026","ok","Ký số toàn trình 100% văn bản điện tử (trừ văn bản mật và một số văn bản đặc thù).",0,0,"Chưa có số liệu riêng về số cán bộ được cấp chữ ký số."],
+[4,"100% hồ sơ, tài liệu không mật của Đảng được số hóa và quản lý, sử dụng trên môi trường số","Văn phòng Đảng ủy","2026-11-30","Tháng 11/2026","mid","Chỉnh lý 355 hồ sơ/65.487 trang; đã số hóa 306 hồ sơ/57.497 trang; còn 49 hồ sơ/7.990 trang. Đã chỉnh lý 175 hồ sơ mật, đang số hóa.",0,0,""],
+[5,"100% chi bộ sử dụng Sổ tay Đảng viên điện tử trong sinh hoạt chi bộ định kỳ hằng tháng","Ban Xây dựng Đảng","2026-09-30","Quý III/2026","mid","96,28% đảng viên sử dụng Sổ tay Đảng viên điện tử (đến 25/9/2026).",96.28,100,"Báo cáo đo theo đảng viên, chỉ tiêu đo theo chi bộ. Cần số chi bộ sinh hoạt trên môi trường điện tử."],
+[6,"85% trở lên cán bộ, công chức, viên chức được bồi dưỡng kỹ năng số căn bản","Ban Xây dựng Đảng","2026-09-30","Quý III/2026","todo","Đã tập huấn AI, an ninh mạng (hơn 120 người) và kỹ năng số (hơn 270 người). Chưa có tỷ lệ trên tổng số cán bộ.",0,0,""],
+[7,"100% cán bộ, công chức, viên chức tham gia học tập, bồi dưỡng trên nền tảng “Bình dân học vụ số”","Đảng ủy UBND phường","2026-09-30","Quý III/2026","ok","Đạt 100% cán bộ, công chức, viên chức thuộc phường tham gia (đến tháng 9/2026).",100,100,""],
+[8,"85% cán bộ, công chức, viên chức thành thạo sử dụng phần mềm quản lý văn bản, ký số, xử lý hồ sơ trực tuyến","Văn phòng Đảng ủy; Đảng ủy UBND","2026-11-30","Tháng 11/2026","todo",NA,0,0,"Tham chiếu: văn bản đi trên môi trường điện tử của Đảng ủy mới đạt 34,10% (985/2.889); riêng tháng 9 đạt 75% (228/306)."],
+[9,"80% thủ tục hành chính được tiếp nhận, giải quyết phi địa giới hành chính giữa các phường","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","todo",NA,0,0,""],
+[10,"80% hồ sơ, kết quả giải quyết thủ tục hành chính được số hóa","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","todo","Công an phường: số hóa 100% hồ sơ phát sinh (48.806) và hồ sơ còn hiệu lực (75.895). Chưa có số liệu của Trung tâm phục vụ hành chính công.",0,0,""],
+[11,"85% dịch vụ công trực tuyến toàn trình trên tổng số thủ tục hành chính có đủ điều kiện","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","todo","Công an phường: dịch vụ công trực tuyến đạt 100% (48.806/48.806). Chưa có số liệu của UBND.",0,0,""],
+[12,"100% TTHC đủ điều kiện thực hiện trực tuyến toàn trình; tối thiểu 80% hồ sơ xử lý hoàn toàn trực tuyến","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","mid","Hồ sơ xử lý đúng hạn 98,31% (5.705/5.803); 98 hồ sơ qua cổng dịch vụ công đang trong thời hạn giải quyết.",98.31,100,"Đây là tỷ lệ đúng hạn, chưa phải tỷ lệ xử lý hoàn toàn trực tuyến."],
+[13,"Phát triển ứng dụng WebGIS; triển khai tra cứu thông tin quy hoạch trên nền tảng GIS","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","ok","Triển khai Bản đồ số WebGIS (ranh khu phố, nhân sự, trụ sở). Cập nhật dữ liệu đất đai đạt 60%; hoàn thành cập nhật cơ sở dữ liệu quốc gia về quy hoạch đô thị.",0,0,""],
+[14,"Có từ 15 sáng kiến, giải pháp kinh nghiệm trở lên được công nhận cấp phường","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","todo",NA,0,0,"Sáng kiến của Văn phòng Đảng ủy có thể được tính vào chỉ tiêu này."],
+[15,"80% trở lên dân số trưởng thành sử dụng dịch vụ số (y tế, giáo dục, dịch vụ công)","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","todo",NA,0,0,"Lệch số liệu: nội dung Kế hoạch 52 ghi 82%, Phụ lục I ghi 80%. Cần thống nhất."],
+[16,"Trên 95% người dân được tạo lập sổ sức khỏe điện tử để quản lý sức khỏe theo vòng đời","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","warn","48.740/130.246 người, đạt 37,4% (đến 24/9/2026).",37.4,95,"Phụ lục 2 Nghị quyết 03 ghi mục tiêu ≥90%, Kế hoạch 52 ghi trên 95%. Cần thống nhất."],
+[17,"80% trở lên người dân có tài khoản định danh điện tử VNeID (từ 14 tuổi trở lên)","Đảng ủy Công an phường","2026-11-30","Tháng 11/2026","todo",NA,0,0,"Cần số liệu của Công an phường."],
+[18,"100% doanh nghiệp, hợp tác xã, hộ kinh doanh được tuyên truyền, phổ biến về ứng dụng khoa học, công nghệ, đổi mới sáng tạo, chuyển đổi số, sản xuất kinh doanh xanh","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","todo",NA,0,0,""],
+[19,"100% doanh nghiệp nhỏ và vừa ứng dụng công nghệ số; 100% cơ sở kinh doanh chấp nhận thanh toán không dùng tiền mặt","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","mid","Doanh nghiệp nhỏ và vừa ứng dụng công nghệ số đạt 100% (1.581/1.581). Chi trả an sinh không dùng tiền mặt: còn 173 trường hợp nhận tiền mặt.",100,100,"Chưa có số liệu về tỷ lệ cơ sở kinh doanh chấp nhận thanh toán không dùng tiền mặt."],
+[20,"Tổ chức tối thiểu 01 lớp tập huấn cơ bản về kỹ năng bán hàng online, sàn thương mại điện tử, quảng cáo số cho hộ kinh doanh, doanh nghiệp","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","todo","Đã hướng dẫn kê khai, nộp thuế điện tử cho hộ kinh doanh (hỗ trợ trực tiếp hơn 1.070 hộ). Chưa thấy lớp tập huấn đúng nội dung chỉ tiêu.",0,0,""],
+[21,"Phấn đấu hỗ trợ vận hành ít nhất 01 mô hình khởi nghiệp sáng tạo","Đảng ủy UBND phường","2026-11-30","Tháng 11/2026","todo",NA,0,0,""]];
+// [stt, mục tiêu đến 2030, chủ trì, các mốc]
+const L=[
+[1,"Đảng ủy, UBND phường sử dụng phần mềm quản trị điều hành thống nhất","UBND phường; Văn phòng Đảng ủy",["Quý IV/2025–2026: rà soát, chuẩn hóa, chuyển sang phần mềm dùng chung của Thành phố","2027–2029: 100% văn bản, hồ sơ xử lý trên hệ thống; tích hợp chữ ký số","2030: hoàn thành mục tiêu"]],
+[2,"Thực hiện Đề án chuyển đổi số trong các cơ quan Đảng","Văn phòng Đảng ủy",["Theo Đề án của Thành ủy","Đưa nội dung Đề án vào sinh hoạt đảng bộ, chi bộ định kỳ"]],
+[3,"100% cán bộ, công chức được bồi dưỡng kỹ năng số căn bản","UBND phường; Ban Xây dựng Đảng",["Cuối 2025: ≥80%","2026–2028: mở rộng chuyên đề AI cơ bản, bảo mật dữ liệu; ≥90%","2029–2030: tập huấn nâng cao; cuối 2030 đạt 100%"]],
+[4,"100% cán bộ, công chức, viên chức làm chủ kỹ năng số, ứng dụng công nghệ trong quản lý điều hành","UBND phường",["2025: ≥80%","2026: 85%","2027: 90%","2028: 95%","2029: 100%","2030: duy trì 100%"]],
+[5,"100% thủ tục hành chính tiếp nhận, giải quyết phi địa giới hành chính","UBND phường; Trung tâm phục vụ hành chính công",["Hết 2025: ≥70%","Hết 2030: 100%"]],
+[6,"100% hồ sơ, kết quả giải quyết thủ tục hành chính được số hóa","UBND phường",["Hết 2025: ≥70%","Hết 2030: 100%"]],
+[7,"100% dịch vụ công trực tuyến toàn trình trên tổng số thủ tục có đủ điều kiện","UBND phường",["Hết 2025: ≥80%","Hết 2030: 100%"]],
+[8,"85% trở lên hồ sơ thủ tục hành chính xử lý trực tuyến","UBND phường",["Hết 2025: ≥70%","Hết 2030: ≥85%"]],
+[9,"Ứng dụng thương mại điện tử","UBND phường; Mặt trận; khu phố",["2025: rà soát danh sách hộ kinh doanh, doanh nghiệp; tuyên truyền","2026–2027: tối thiểu 02 lớp tập huấn","2028–2029: tập huấn nâng cao; mô hình điểm","2030: duy trì tập huấn 6 tháng, quý; kết nối xúc tiến thương mại"]],
+[10,"Ứng dụng công nghệ hiện đại (AI, GIS: đất đai, môi trường, đô thị, y tế, giáo dục)","UBND phường",["Cơ sở dữ liệu số về đất đai, quy hoạch, môi trường, sức khỏe, giáo dục","Hồ sơ sức khỏe điện tử: ≥90% người dân","Ứng dụng AI: phân tích vi phạm xây dựng, cảnh báo ô nhiễm, dự báo hạ tầng"]],
+[11,"Mỗi năm từ 15 sáng kiến trở lên cấp phường; giai đoạn 2025–2030 có ít nhất 01 sáng kiến được công nhận cấp Thành phố","UBND phường",["Quý IV/2025: phát động phong trào, xây dựng tiêu chí, bình xét","2026–2030: ứng dụng giải pháp số, biểu dương, hội thảo, cuộc thi cấp phường","Cuối 2030: ≥01 sáng kiến cấp Thành phố"]],
+[12,"90% dân số trưởng thành tiếp cận dịch vụ số (y tế, giáo dục, bảo hiểm, giao thông)","UBND phường; Mặt trận; khu phố",["Hết 2025: 80%","2026–2030: mở rộng dịch vụ giao thông, tiện ích đô thị, thanh toán không tiền mặt","Hết 2030: 90%"]],
+[13,"80% trở lên người dân có tài khoản VNeID (từ 14 tuổi)","Công an phường",["Hết 2025: ≥50%","2026–2030: điểm hỗ trợ kích hoạt tại phường, khu phố; chiến dịch “Toàn dân dùng VNeID”","Hết 2030: ≥80%"]],
+[14,"Có ít nhất 04 doanh nghiệp khởi nghiệp sáng tạo","UBND phường; Mặt trận; khu phố",["Quý IV/2025: khảo sát, chọn ít nhất 01 doanh nghiệp","2026: ≥01 mô hình khởi nghiệp","2027: thêm ≥01; duy trì ≥02","2028–2029: duy trì ≥03","2030: từ 04 trở lên"]]];
+
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])),fmt=n=>String(n).replace(".",",");
+const today=new Date(),late=t=>t[5]!="ok"&&new Date(t[3])<today,cnt=k=>T.filter(t=>t[5]==k).length,chip=k=>`<span class="chip ${k}">${S[k]}</span>`;
+const ST=["ok","mid","warn","todo"];
+const R=document.documentElement;
+function setTh(m){R.dataset.theme=m;try{localStorage.setItem("th",m)}catch(e){}$("#th").textContent=m=="dark"?"Chế độ sáng":"Chế độ tối"}
+let th=null;try{th=localStorage.getItem("th")}catch(e){}
+setTh(th||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
+$("#th").onclick=()=>setTh(R.dataset.theme=="dark"?"light":"dark");$("#pr").onclick=()=>print();
+const prog=t=>t[7]?`<div class="pg ${t[5]}"><i style="width:${Math.min(100,t[7]/t[8]*100)}%"></i></div><div class="s">${fmt(t[7])}% so với chỉ tiêu ${t[8]}%</div>`:"";
+const VW={
+a(){const dl=Math.ceil((new Date("2026-11-30")-today)/864e5),n=T.filter(t=>t[3]=="2026-11-30").length;
+return `<div class="kpis">${ST.map(k=>`<div class="kpi ${k}"><div class="n">${cnt(k)}</div><div class="l">${S[k]}</div></div>`).join("")}<div class="kpi"><div class="n">${n}</div><div class="l">đến hạn 30/11/2026${dl>=0?`, còn ${dl} ngày`:""}</div></div></div>
+<h2>Tiến độ 21 chỉ tiêu năm 2026</h2><div class="card"><div class="dist">${ST.map(k=>`<i class="${k}" style="flex:${cnt(k)||0.001}"></i>`).join("")}</div><div class="lg">${ST.map(k=>`<span class="${k}"><b></b><span style="color:var(--mut)">${S[k]}: ${cnt(k)}</span></span>`).join("")}</div>
+<p class="s" style="margin:12px 0 0;font-size:13px;color:var(--mut)">Báo cáo 9 tháng nêu 14/21 chỉ tiêu đạt và vượt nhưng chưa liệt kê từng chỉ tiêu. Biểu đồ chỉ tính những chỉ tiêu đã có số liệu đối chiếu.</p></div>
+<h2>Số liệu nổi bật theo Báo cáo 9 tháng</h2><div class="facts">${[["87","cuộc họp trên iCPV Cabinet, 100% thành phần tham gia"],["96,28%","đảng viên dùng Sổ tay điện tử"],["100%","cán bộ, công chức, viên chức học Bình dân học vụ số"],["98,31%","hồ sơ TTHC xử lý đúng hạn (5.705/5.803)"],["100%","doanh nghiệp nhỏ và vừa ứng dụng công nghệ số (1.581)"],["1.743.349","lượt xem fanpage, 1.885 tin, bài"]].map(x=>`<div class="card"><div class="n">${x[0]}</div><div class="l">${x[1]}</div></div>`).join("")}</div>`},
+b(){return `<div class="tool"><input id="q" placeholder="Tìm chỉ tiêu, cơ quan, kết quả…" aria-label="Tìm kiếm"><select id="fo" aria-label="Cơ quan chủ trì"><option value="">Mọi cơ quan chủ trì</option>${[...new Set(T.map(t=>t[2]))].map(o=>`<option>${esc(o)}</option>`).join("")}</select><select id="fs" aria-label="Trạng thái"><option value="">Mọi trạng thái</option>${ST.map(k=>`<option value="${k}">${S[k]}</option>`).join("")}</select><select id="fd" aria-label="Thời hạn"><option value="">Mọi thời hạn</option>${[...new Set(T.map(t=>t[4]))].map(o=>`<option>${esc(o)}</option>`).join("")}</select><button class="btn" id="rs">Xóa bộ lọc</button><span class="cn" id="cn"></span></div>
+<div class="tw"><table><thead><tr><th>Chỉ tiêu</th><th>Chủ trì</th><th>Hạn</th><th>Trạng thái</th><th>Kết quả theo báo cáo</th></tr></thead><tbody id="tb"></tbody></table></div>`},
+c(){return `<div class="tw"><table><thead><tr><th>Mục tiêu đến năm 2030</th><th>Chủ trì</th><th>Mốc tiến độ</th></tr></thead><tbody>${L.map(l=>`<tr><td><b>${l[0]}.</b> ${esc(l[1])}</td><td data-l="Chủ trì">${esc(l[2])}</td><td><div class="ms">${l[3].map(m=>`<span>${esc(m)}</span>`).join("")}</div></td></tr>`).join("")}</tbody></table></div>`},
+d(){const sc=t=>t[5]=="warn"?0:late(t)&&t[5]=="todo"?1:late(t)?2:t[5]=="todo"?3:4,ls=T.filter(t=>t[5]=="warn"||t[5]=="todo"||late(t)||t[9]).sort((a,b)=>sc(a)-sc(b)||a[0]-b[0]);
+const ac=t=>t[5]=="warn"?`Đề nghị ${t[2]} báo cáo nguyên nhân và giải pháp đạt chỉ tiêu trước ${t[4]}.`:t[5]=="todo"?`Đề nghị ${t[2]} cung cấp số liệu thực hiện, nguồn minh chứng.`:late(t)?`Đã quá mốc ${t[4]}, đề nghị ${t[2]} báo cáo tiến độ hoàn thành.`:"";
+return `<p class="s" style="color:var(--mut);font-size:13.5px;margin:0 0 12px">${ls.length} chỉ tiêu cần theo dõi, xếp theo mức ưu tiên: dưới chỉ tiêu, quá mốc, chưa có số liệu.</p>`+ls.map(t=>`<div class="card todo-card ${t[5]}"><h3>${t[0]}. ${esc(t[1])}</h3><div class="s">${chip(t[5])}${late(t)?'<span class="late">Quá mốc '+t[4]+'</span>':" Hạn: "+t[4]}. Chủ trì: ${esc(t[2])}</div>${t[9]?`<div class="nt" style="color:var(--warn);font-size:13px;margin-top:6px">${esc(t[9])}</div>`:""}${ac(t)?`<div class="ac">${esc(ac(t))}</div>`:""}</div>`).join("")}};
+const TT={a:"Tổng quan",b:"Chỉ tiêu năm 2026 (21)",c:"Lộ trình đến năm 2030 (14 mục tiêu)",d:"Cần xử lý"};
+function drawRows(){const q=$("#q").value.toLowerCase(),o=$("#fo").value,s=$("#fs").value,d=$("#fd").value;
+const r=T.filter(t=>(!o||t[2]==o)&&(!s||t[5]==s)&&(!d||t[4]==d)&&(t[1]+t[2]+t[6]).toLowerCase().includes(q));
+$("#tb").innerHTML=r.map(t=>`<tr><td><b>${t[0]}.</b> ${esc(t[1])}</td><td data-l="Chủ trì">${esc(t[2])}</td><td data-l="Hạn">${t[4]}${late(t)?'<span class="late">(quá mốc)</span>':""}</td><td>${chip(t[5])}</td><td>${esc(t[6])}${prog(t)}${t[9]?`<div class="nt">${esc(t[9])}</div>`:""}</td></tr>`).join("")||'<tr><td colspan="5" class="empty">Không có chỉ tiêu phù hợp. Đổi từ khóa hoặc xóa bộ lọc.</td></tr>';
+$("#cn").textContent=`Hiển thị ${r.length}/21 chỉ tiêu`}
+function go(v){$("#v").innerHTML=VW[v]();$("#ttl").textContent=TT[v];document.querySelectorAll("#nav button").forEach(b=>b.toggleAttribute("aria-current",b.dataset.v==v)||b.removeAttribute("aria-current"));
+document.querySelectorAll("#nav button").forEach(b=>{if(b.dataset.v==v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
+if(v=="b"){["#q","#fo","#fs","#fd"].forEach(i=>$(i).oninput=drawRows);$("#rs").onclick=()=>{["#q","#fo","#fs","#fd"].forEach(i=>$(i).value="");drawRows()};drawRows()}scrollTo(0,0)}
+$("#nav").onclick=e=>{if(e.target.dataset.v)go(e.target.dataset.v)};go("a");
+</script></body></html>
